@@ -57,8 +57,15 @@ class SmurfForm extends Component {
   };
 
   render() {
+    let updatePath = this.props.location.pathname.includes('update')
+
     return (
       <div className="SmurfForm">
+      {
+        updatePath ? 
+        <h3>Updating Smurf #{this.props.match.params.id}</h3> : 
+        null
+        }
         <form onSubmit={this.handleSubmit}>
           <input
             onChange={this.handleInputChange}

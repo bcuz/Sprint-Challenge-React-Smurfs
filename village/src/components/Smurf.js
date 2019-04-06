@@ -2,21 +2,22 @@ import React from 'react';
 import axios from 'axios';
 
 const Smurf = props => {
+  let { id, name, height, age, updateItems } = props
 
   const deleteSmurf = () => {
     axios
-      .delete(`http://localhost:3333/smurfs/${props.id}`)
+      .delete(`http://localhost:3333/smurfs/${id}`)
       .then(response => {
-        props.updateItems(response.data);
+        updateItems(response.data);
       })
       .catch(err => console.log(err));
   };
 
   return (
     <div className="Smurf">
-      <h3>{props.name}</h3>
-      <strong>{props.height} tall</strong>
-      <p>{props.age} smurf years old</p>
+      <h3>{name}</h3>
+      <strong>{height} tall</strong>
+      <p>{age} smurf years old</p>
       <button onClick={deleteSmurf}>delete</button>
     </div>
   );

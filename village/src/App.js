@@ -38,7 +38,7 @@ class App extends Component {
               <NavLink to="/smurf-form">Add Smurf</NavLink>
             </li>
           </ul>
-          <Route exact path="/" render={props => <Smurfs {...props} smurfs={this.state.smurfs} /> } />          
+          <Route exact path="/" render={props => <Smurfs {...props} smurfs={this.state.smurfs} updateItems={this.updateItems} /> } />          
           <Route path="/smurf-form" render={props => <SmurfForm {...props} updateItems={this.updateItems} /> } />          
         </div>
       </BrowserRouter>

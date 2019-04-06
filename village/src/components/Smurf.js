@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const Smurf = props => {
@@ -18,7 +19,8 @@ const Smurf = props => {
       <h3>{name}</h3>
       <strong>{height} tall</strong>
       <p>{age} smurf years old</p>
-      <button onClick={deleteSmurf}>delete</button>
+      <Link to={`/update/${id}`}>Update</Link>
+      <button onClick={deleteSmurf}>Delete</button>
     </div>
   );
 };

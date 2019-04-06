@@ -40,6 +40,7 @@ class App extends Component {
           </ul>
           <Route exact path="/" render={props => <Smurfs {...props} smurfs={this.state.smurfs} updateItems={this.updateItems} /> } />          
           <Route path="/smurf-form" render={props => <SmurfForm {...props} updateItems={this.updateItems} /> } />          
+          <Route path="/update/:id" render={props => <SmurfForm {...props} updateItems={this.updateItems} /> } />          
         </div>
       </BrowserRouter>
     );
